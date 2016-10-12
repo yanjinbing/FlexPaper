@@ -41,7 +41,7 @@ if ( startPage == null || startPage.isEmpty())
 	<script type="text/javascript">   
 		function getDocumentUrl(document){
 			var numPages = <%=conf.getTotalPages(pdfFilePath + doc + ".pdf") %>;
-			var url = "{view.jsp?doc={doc}&format={format}&page=[*,0],{numPages}#page=20}";
+			var url = "{view.jsp?doc={doc}&format={format}&page=[*,0],{numPages}}";
 			url = url.replace("{doc}",document);
 			url = url.replace("{numPages}",numPages);
 			return url;
@@ -70,7 +70,7 @@ if ( startPage == null || startPage.isEmpty())
 				ZoomTransition : 'easeOut',
 				ZoomTime : 0.5,
 				ZoomInterval : 0.1,
-				FitPageOnLoad : false,
+				FitPageOnLoad : true,
 				FitWidthOnLoad : false,
 				FullScreenAsMaxWindow : false,
 				ProgressiveLoading : false,
